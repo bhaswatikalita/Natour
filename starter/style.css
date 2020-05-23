@@ -19,9 +19,9 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777777;
-  padding: 20px;
+  padding: 25 px;
 }
-/* header */
+/* Section-1 header */
 .header {
   position: relative;
   height: 95vh;
@@ -51,10 +51,12 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 .heading-primary {
   color: #ffffff;
   text-transform: uppercase;
+  margin-bottom: 60px;
 
   /* quickfix for shaky animation */
   backface-visibility: hidden;
@@ -79,7 +81,7 @@ body {
   /* using short-hand method */
   animation: moveInRight 1s ease-out;
 }
-/* animation */
+/* animation for text-box*/
 
 @keyframes moveInLeft {
   0% {
@@ -111,4 +113,64 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+/* button-animation */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+/* button */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);
+}
+.btn-white {
+  background-color: #ffffff;
+  color: #777777;
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* give the effect of button moving up */
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
