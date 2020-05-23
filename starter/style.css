@@ -6,6 +6,8 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* Universal */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +21,7 @@ body {
   color: #777777;
   padding: 20px;
 }
-
+/* header */
 .header {
   position: relative;
   height: 95vh;
@@ -33,7 +35,7 @@ body {
 
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
-
+/* logo */
 .logo-box {
   position: absolute;
   top: 40px;
@@ -42,6 +44,8 @@ body {
 .logo-box img {
   height: 35px;
 }
+
+/* text */
 .text-box {
   position: absolute;
   top: 40%;
@@ -51,16 +55,60 @@ body {
 .heading-primary {
   color: #ffffff;
   text-transform: uppercase;
+
+  /* quickfix for shaky animation */
+  backface-visibility: hidden;
 }
 .heading-primary-main {
   display: block;
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+
+  /* needed for animation */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 .heading-primary-sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+
+  /* using short-hand method */
+  animation: moveInRight 1s ease-out;
+}
+/* animation */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(00px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
