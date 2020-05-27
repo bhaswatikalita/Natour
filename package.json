@@ -1,0 +1,23 @@
+{
+  "name": "natour1",
+  "version": "1.0.0",
+  "description": "Landing page for natour",
+  "main": "index.html",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhaswatikalita/Natour.git"
+  },
+  "author": "Bhaswati Kalita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhaswatikalita/Natour/issues"
+  },
+  "homepage": "https://github.com/bhaswatikalita/Natour#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^2.0.4"
+  }
+}
