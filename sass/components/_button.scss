@@ -27,6 +27,16 @@
       background-color: #fff;
     }
   }
+
+  &-green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
   &:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba($color-black, 0.2);
